@@ -1,10 +1,16 @@
 require 'ostruct'
 
-class StrictOpenStruct < OpenStruct
-  # Raises NoMethodError if the called method is not a setter and was not explicitly initialized with a value.
+class StrictOpenStruct
+
+  def initialize(*args)
+    @open_struct = OpenStruct.new(*args)
+  end
+
+  # Raises NoMethodError unless the underlying OpenStruct
+  # responds to the method or the method is a setter
   def method_missing(method_name, *args, &block)
-    if respond_to?(method_name) || method_name =~ /=$/
-      super
+    if @open_struct.respond_to?(method_name) || method_name =~ /=$/
+      @open_struct.send(method_name, *args, &block)
     else
       fail NoMethodError, "undefined method `#{method_name}' for #{self}"
     end
