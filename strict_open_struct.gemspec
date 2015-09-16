@@ -7,10 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "strict_open_struct"
   spec.version       = StrictOpenStruct::VERSION
   spec.authors       = ["Nathan Wenneker"]
-  spec.email         = ["nathan@workmein.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.email         = ["nathan@preferral.com"]
+  spec.summary       = %q{Thin layer on top of OpenStruct to raise exceptions for undefined keys.}
+  spec.homepage      = "https://github.com/Preferral/strict_open_struct"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
