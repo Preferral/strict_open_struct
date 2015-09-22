@@ -7,12 +7,16 @@ A thin layer on top of OpenStruct that raises an exception when you access undef
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'strict_open_struct', github: 'Preferral/strict_open_struct'
+gem 'strict_open_struct'
 ```
 
 And then execute:
 
     $ bundle
+
+Or install it yourself as:
+
+    $ gem install strict_open_struct
 
 ## Usage
 
