@@ -15,4 +15,8 @@ class StrictOpenStruct
       fail NoMethodError, "undefined method `#{method_name}' for #{self}"
     end
   end
+
+  def ==(other)
+    @open_struct == other.instance_variable_get("@open_struct")
+  end
 end

@@ -33,5 +33,18 @@ describe StrictOpenStruct do
     end
   end
 
+  describe "#==" do
+    specify "equal if insantiated with same data" do
+      assert_equal StrictOpenStruct.new(a: 'a'), StrictOpenStruct.new(a: 'a')
+    end
+
+    specify "equal if has same data" do
+      sos1 = StrictOpenStruct.new
+      sos1.a = 'a'
+      sos2 = StrictOpenStruct.new(a: 'a')
+      assert_equal sos1, sos2
+    end
+  end
+
 end
 

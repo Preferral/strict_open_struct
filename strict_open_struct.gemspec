@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "strict_open_struct"
-  spec.version       = "0.0.1"
+  spec.version       = "0.0.1.1"
   spec.authors       = ["Nathan Wenneker"]
   spec.email         = ["nathan@preferral.com"]
   spec.summary       = %q{Thin layer on top of OpenStruct to raise exceptions for undefined keys.}
