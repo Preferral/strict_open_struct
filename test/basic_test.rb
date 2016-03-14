@@ -46,5 +46,17 @@ describe StrictOpenStruct do
     end
   end
 
+  describe "#[]" do
+    specify "returns value for key, when it exists" do
+      assert_equal StrictOpenStruct.new(a: 'a')[:a], 'a'
+    end
+
+    specify "raises an exception if key is undefined" do
+      assert_raises NoMethodError do
+        StrictOpenStruct.new[:a]
+      end
+    end
+  end
+
 end
 
