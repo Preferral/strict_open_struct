@@ -12,7 +12,7 @@ class StrictOpenStruct
     if open_struct_responds_to?(method_name)
       @open_struct.send(method_name, *args, &block)
     else
-      fail NoMethodError, "undefined method `#{method_name}' for #{self}"
+      failure(method_name)
     end
   end
 
@@ -25,10 +25,14 @@ class StrictOpenStruct
   end
 
   def [](key)
-    self.send(key)
+    @open_struct.to_h.fetch(key.to_sym)
   end
 
   private
+
+  def failure(method_name)
+    fail NoMethodError, "undefined method `#{method_name}' for #{self}"
+  end
 
   def open_struct_responds_to?(method_name)
     @open_struct.respond_to?(method_name) || method_name =~ /=$/

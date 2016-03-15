@@ -52,7 +52,7 @@ describe StrictOpenStruct do
     end
 
     specify "raises an exception if key is undefined" do
-      assert_raises NoMethodError do
+      assert_raises KeyError do
         StrictOpenStruct.new[:a]
       end
     end
