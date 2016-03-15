@@ -27,4 +27,8 @@ class StrictOpenStruct
   def ==(other)
     @open_struct == other.instance_variable_get("@open_struct")
   end
+
+  def [](key)
+    self.send(key)
+  end
 end
