@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "strict_open_struct"
-  spec.version       = "0.0.1.1"
-  spec.authors       = ["Nathan Wenneker"]
+  spec.version       = "0.0.2.0"
+  spec.authors       = ["Nathan Wenneker, Jon Gautsch"]
   spec.email         = ["nathan@preferral.com"]
   spec.summary       = %q{Thin layer on top of OpenStruct to raise exceptions for undefined keys.}
   spec.homepage      = "https://github.com/Preferral/strict_open_struct"
